@@ -26,6 +26,7 @@
         </a>
       </div>
       <h1>{{name}}</h1>
+      <h2></h2>
     </div>
   </div>
 </template>
