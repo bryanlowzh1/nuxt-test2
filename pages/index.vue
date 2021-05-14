@@ -1,52 +1,33 @@
 <template>
-  <div class="container">
-    <div>
-      <logo />
-      <h1 class="title">
-        nuxtjs
-      </h1>
-      <input type="text" id="1" v-model="name">
-      <h2 class="subtitle">
-        My astonishing Nuxt.js project
-      </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
-      <h1>{{name}}</h1>
-      <h2></h2>
-    </div>
+  <div class="hello">
+    <h1>Gecko main page</h1>
+    <h2>Welcome to awesome</h2>
+    <nuxt-link to="/blog" class="btn">Go to blog</nuxt-link>
   </div>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
+import {getPosts} from "../api/posts";
 
 export default {
-  components: {
-    Logo
-  },
-  data() {
+  async asyncData() {
+    const posts = await getPosts();
     return {
-      name: ''
+      posts: posts
     }
   }
 }
 </script>
 
 <style>
+
+.btn {
+  padding: 16px 24px;
+  background-color: coral;
+  border-radius: 12px;
+  color: white;
+  text-decoration: none;
+}
 .container {
   margin: 0 auto;
   min-height: 100vh;
@@ -56,9 +37,27 @@ export default {
   text-align: center;
 }
 
+.hello {
+  margin: 0 auto;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+}
+
+.hello > h1, h2 {
+  margin: 24px 0 0 0;
+}
+
+.hello > h2 {
+  margin-bottom: 48px;
+}
+
 .title {
   font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   display: block;
   font-weight: 300;
   font-size: 100px;

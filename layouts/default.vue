@@ -1,5 +1,12 @@
 <template>
   <div>
+    <header>
+      <div class="navcontainer">
+        <div class="navbar">
+          <nuxt-link to="/" class="logo">Gecko Inc</nuxt-link>
+        </div>
+      </div>
+    </header>
     <nuxt />
   </div>
 </template>
@@ -15,6 +22,12 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
+}
+
+.navcontainer {
+  width: 100%;
+  height: 80px;
+  background-color: antiquewhite;
 }
 
 *,
