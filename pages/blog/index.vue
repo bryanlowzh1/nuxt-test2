@@ -10,6 +10,7 @@
               {{ post.title }}
             </nuxt-link>
             <p>{{post.excerpt}}</p>
+            <h1>efef</h1>
           </div>
         </li>
       </ul>
