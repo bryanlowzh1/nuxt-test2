@@ -5,6 +5,7 @@
       <h1 class="title">
         nuxtjs
       </h1>
+      <input type="text" id="1" v-model="name">
       <h2 class="subtitle">
         My astonishing Nuxt.js project
       </h2>
@@ -24,6 +25,7 @@
           GitHub
         </a>
       </div>
+      <h1>{{name}}</h1>
     </div>
   </div>
 </template>
@@ -34,6 +36,11 @@ import Logo from '~/components/Logo.vue'
 export default {
   components: {
     Logo
+  },
+  data() {
+    return {
+      name: ''
+    }
   }
 }
 </script>
